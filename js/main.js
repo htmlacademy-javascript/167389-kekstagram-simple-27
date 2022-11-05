@@ -6,23 +6,14 @@ function randomNumber(min, max) {
   return Math.floor(result);
 }
 
-function stringLength(string, length) {
-  return string.length <= length;
-}
-
-const index=1;
-
 const DESCRIPTIONS = [
   'пляж с шезлонгами', 'указатель к пляжу', 'океан', 'девушка на пляже', 'рис с карри, блюдо', 'черная машина', 'клубника на тарелке', 'освежающий напиток в кружке', 'самолет над пляжем', 'обувница', 'дорога к пляжу', 'белая машина', 'обед', 'которолл', 'домашние тапки-луноходы'
 ];
 
-const getRandomArrayElement = (elements) => {
-  return elements[randomNumber(0, elements.length - 1)]
-};
-
 const photoInfo = (index) => (
   {
     id: index,
+    description: DESCRIPTIONS[index],
     url: `photos/${index}.jpg`,
     likes: randomNumber(15, 200),
     comments: randomNumber(0, 200)
@@ -30,11 +21,12 @@ const photoInfo = (index) => (
 );
 
 const allPhotoInfo = () =>
-  Array.from({length:25}, (_,index) =>
-  photoInfo(index + 1)
-);
+  Array.from({length: 25}, (_, index) =>
+    photoInfo(index + 1)
+  );
 
+
+photoInfo();
 allPhotoInfo();
-console.log(allPhotoInfo);
 
 

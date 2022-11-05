@@ -9,5 +9,32 @@ function randomNumber(min, max) {
 function stringLength(string, length) {
   return string.length <= length;
 }
-randomNumber(1,7);
-stringLength('', 110);
+
+const index=1;
+
+const DESCRIPTIONS = [
+  'пляж с шезлонгами', 'указатель к пляжу', 'океан', 'девушка на пляже', 'рис с карри, блюдо', 'черная машина', 'клубника на тарелке', 'освежающий напиток в кружке', 'самолет над пляжем', 'обувница', 'дорога к пляжу', 'белая машина', 'обед', 'которолл', 'домашние тапки-луноходы'
+];
+
+const getRandomArrayElement = (elements) => {
+  return elements[randomNumber(0, elements.length - 1)]
+};
+
+const photoInfo = (index) => (
+  {
+    id: index,
+    url: `photos/${index}.jpg`,
+    likes: randomNumber(15, 200),
+    comments: randomNumber(0, 200)
+  }
+);
+
+const allPhotoInfo = () =>
+  Array.from({length:25}, (_,index) =>
+  photoInfo(index + 1)
+);
+
+allPhotoInfo();
+console.log(allPhotoInfo);
+
+

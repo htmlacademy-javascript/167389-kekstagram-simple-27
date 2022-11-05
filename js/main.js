@@ -13,7 +13,7 @@ const DESCRIPTIONS = [
 const photoInfo = (index) => (
   {
     id: index,
-    description: DESCRIPTIONS[index],
+    description: DESCRIPTIONS[index - 1],
     url: `photos/${index}.jpg`,
     likes: randomNumber(15, 200),
     comments: randomNumber(0, 200)

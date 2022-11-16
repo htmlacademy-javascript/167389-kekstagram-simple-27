@@ -1,7 +1,4 @@
-import {allPhoyo} from './util.js';
+import {allPhotoInfo} from './data.js';
 
-console.log(
-    allPhotoInfo()
-);
-
+allPhotoInfo();
 

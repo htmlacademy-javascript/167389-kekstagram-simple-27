@@ -1,4 +1,5 @@
 import {allPhotoInfo} from './data.js';
+import {photoInfo} from './data.js';
 
 const picturesAll = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
@@ -7,7 +8,7 @@ const pictureTemplate = document.querySelector('#picture')
 
 const pictureList = allPhotoInfo();
 
-pictureList.forEach((url, description, likes, comments) => {
+pictureList.forEach(({url, description, likes, comments}) => {
   const pictureInfo = pictureTemplate.cloneNode(true);
   pictureInfo.querySelector('.picture__img').src = url;
   pictureInfo.querySelector('.picture__img').alt = description;
@@ -15,4 +16,3 @@ pictureList.forEach((url, description, likes, comments) => {
   pictureInfo.querySelector('.picture__comments').textContent = comments;
   picturesAll.appendChild(pictureInfo);
 });
-

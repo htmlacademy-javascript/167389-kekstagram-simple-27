@@ -3,5 +3,4 @@ import './miniphoto.js';
 
 photoInfo();
 allPhotoInfo();
-console.log(allPhotoInfo());
 

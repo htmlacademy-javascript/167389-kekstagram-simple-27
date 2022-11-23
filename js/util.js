@@ -6,4 +6,6 @@ function randomNumber(min, max) {
   return Math.floor(result);
 }
 
-export {randomNumber};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+export {randomNumber, isEscapeKey};

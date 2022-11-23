@@ -7,6 +7,8 @@ const pristine = new Pristine(uploadForm, {
 });
 
 uploadForm.addEventListener('submit', (evt) => {
-  evt.preventDefault();
+  const isValid = pristine.validate();
+  if (!isValid) {
+    evt.preventDefault();
+  }
 });
-pristine.validate();
